@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				29545AB029AE51B100EAA877 /* Model */,
-				29545AB129AE51B900EAA877 /* Model Controller */,
+				29545AB129AE51B900EAA877 /* Network Controller */,
 				29545AAE29AE515200EAA877 /* Storyboards */,
 				29545AAF29AE516400EAA877 /* Supporting Files */,
 			);
@@ -92,11 +92,11 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		29545AB129AE51B900EAA877 /* Model Controller */ = {
+		29545AB129AE51B900EAA877 /* Network Controller */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "Model Controller";
+			path = "Network Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
