@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		293FDD4B29AF9CA60035DB3B /* ArtistSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FDD4A29AF9CA60035DB3B /* ArtistSearchVC.swift */; };
+		293FDD4E29AF9F290035DB3B /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FDD4D29AF9F280035DB3B /* AlbumTableViewCell.swift */; };
+		293FDD5029AFA59E0035DB3B /* AlbumDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FDD4F29AFA59E0035DB3B /* AlbumDetailVC.swift */; };
 		29545A9B29AE513900EAA877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29545A9A29AE513900EAA877 /* AppDelegate.swift */; };
 		29545A9D29AE513900EAA877 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29545A9C29AE513900EAA877 /* SceneDelegate.swift */; };
 		29545A9F29AE513900EAA877 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29545A9E29AE513900EAA877 /* ViewController.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		293FDD4A29AF9CA60035DB3B /* ArtistSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchVC.swift; sourceTree = "<group>"; };
+		293FDD4D29AF9F280035DB3B /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		293FDD4F29AFA59E0035DB3B /* AlbumDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailVC.swift; sourceTree = "<group>"; };
 		29545A9729AE513900EAA877 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29545A9A29AE513900EAA877 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29545A9C29AE513900EAA877 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +43,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		293FDD4929AF9C750035DB3B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				293FDD4A29AF9CA60035DB3B /* ArtistSearchVC.swift */,
+				293FDD4F29AFA59E0035DB3B /* AlbumDetailVC.swift */,
+				293FDD4C29AF9EFB0035DB3B /* Custom Views */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		293FDD4C29AF9EFB0035DB3B /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				293FDD4D29AF9F280035DB3B /* AlbumTableViewCell.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
 		29545A8E29AE513900EAA877 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +82,7 @@
 			children = (
 				29545AB029AE51B100EAA877 /* Model */,
 				29545AB129AE51B900EAA877 /* Network Controller */,
+				293FDD4929AF9C750035DB3B /* View Controllers */,
 				29545AAE29AE515200EAA877 /* Storyboards */,
 				29545AAF29AE516400EAA877 /* Supporting Files */,
 			);
@@ -170,7 +195,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				293FDD4E29AF9F290035DB3B /* AlbumTableViewCell.swift in Sources */,
+				293FDD5029AFA59E0035DB3B /* AlbumDetailVC.swift in Sources */,
 				29545A9F29AE513900EAA877 /* ViewController.swift in Sources */,
+				293FDD4B29AF9CA60035DB3B /* ArtistSearchVC.swift in Sources */,
 				29545A9B29AE513900EAA877 /* AppDelegate.swift in Sources */,
 				29545A9D29AE513900EAA877 /* SceneDelegate.swift in Sources */,
 			);
@@ -327,6 +355,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				"INFOPLIST_KEY_UIUserInterfaceStyle[sdk=*]" = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
