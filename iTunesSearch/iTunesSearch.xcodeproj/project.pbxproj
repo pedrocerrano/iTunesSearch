@@ -16,6 +16,7 @@
 		29545AA229AE513900EAA877 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29545AA029AE513900EAA877 /* Main.storyboard */; };
 		29545AA429AE513B00EAA877 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29545AA329AE513B00EAA877 /* Assets.xcassets */; };
 		29545AA729AE513B00EAA877 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29545AA529AE513B00EAA877 /* LaunchScreen.storyboard */; };
+		295C5F5D29B0DCCF008DCF5B /* SelectedArtistAlbumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295C5F5C29B0DCCF008DCF5B /* SelectedArtistAlbumsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		29545AA329AE513B00EAA877 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29545AA629AE513B00EAA877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29545AA829AE513B00EAA877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		295C5F5C29B0DCCF008DCF5B /* SelectedArtistAlbumsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedArtistAlbumsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				293FDD4A29AF9CA60035DB3B /* ArtistSearchVC.swift */,
+				295C5F5C29B0DCCF008DCF5B /* SelectedArtistAlbumsVC.swift */,
 				293FDD4F29AFA59E0035DB3B /* AlbumDetailVC.swift */,
 				293FDD4C29AF9EFB0035DB3B /* Custom Views */,
 			);
@@ -200,6 +203,7 @@
 				29545A9F29AE513900EAA877 /* ViewController.swift in Sources */,
 				293FDD4B29AF9CA60035DB3B /* ArtistSearchVC.swift in Sources */,
 				29545A9B29AE513900EAA877 /* AppDelegate.swift in Sources */,
+				295C5F5D29B0DCCF008DCF5B /* SelectedArtistAlbumsVC.swift in Sources */,
 				29545A9D29AE513900EAA877 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
