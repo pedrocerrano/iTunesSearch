@@ -17,6 +17,8 @@
 		29545AA429AE513B00EAA877 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29545AA329AE513B00EAA877 /* Assets.xcassets */; };
 		29545AA729AE513B00EAA877 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29545AA529AE513B00EAA877 /* LaunchScreen.storyboard */; };
 		295C5F5D29B0DCCF008DCF5B /* SelectedArtistAlbumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295C5F5C29B0DCCF008DCF5B /* SelectedArtistAlbumsVC.swift */; };
+		29D67AE529B0E41A005D9AD5 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D67AE429B0E41A005D9AD5 /* Artist.swift */; };
+		29D67AE729B0ED1D005D9AD5 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D67AE629B0ED1D005D9AD5 /* Album.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		29545AA629AE513B00EAA877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29545AA829AE513B00EAA877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		295C5F5C29B0DCCF008DCF5B /* SelectedArtistAlbumsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedArtistAlbumsVC.swift; sourceTree = "<group>"; };
+		29D67AE429B0E41A005D9AD5 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		29D67AE629B0ED1D005D9AD5 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 		29545AB029AE51B100EAA877 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				29D67AE429B0E41A005D9AD5 /* Artist.swift */,
+				29D67AE629B0ED1D005D9AD5 /* Album.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,7 +209,9 @@
 				29545A9F29AE513900EAA877 /* ViewController.swift in Sources */,
 				293FDD4B29AF9CA60035DB3B /* ArtistSearchVC.swift in Sources */,
 				29545A9B29AE513900EAA877 /* AppDelegate.swift in Sources */,
+				29D67AE729B0ED1D005D9AD5 /* Album.swift in Sources */,
 				295C5F5D29B0DCCF008DCF5B /* SelectedArtistAlbumsVC.swift in Sources */,
+				29D67AE529B0E41A005D9AD5 /* Artist.swift in Sources */,
 				29545A9D29AE513900EAA877 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
