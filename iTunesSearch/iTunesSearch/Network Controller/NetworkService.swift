@@ -5,33 +5,33 @@
 //  Created by iMac Pro on 3/2/23.
 //
 
-import Foundation
+import UIKit
 
 struct NetworkService {
 
-    static func fetchArtists(forArtist artist: String, completion: @escaping (Result<ArtistTopLevelDictionary, NetworkError>) -> Void) {
+    static func fetchArtists(searchText search: String, completion: @escaping (Result<ArtistTopLevelDictionary, NetworkError>) -> Void) {
         guard let baseURL   = URL(string: Constants.ITunesAPIs.artistSearchbaseURL) else { completion(.failure(.invalidURL)) ; return }
         var urlComponents   = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
         let entityQuery     = URLQueryItem(name: Constants.ITunesAPIs.artistEntityQueryKey, value: Constants.ITunesAPIs.artistEntityQueryValue)
         let attributeQuery  = URLQueryItem(name: Constants.ITunesAPIs.artistAttributeQueryKey, value: Constants.ITunesAPIs.artistAttributeQueryValue)
-        let termQuery       = URLQueryItem(name: Constants.ITunesAPIs.artistTermQueryKey, value: artist)
+        let termQuery       = URLQueryItem(name: Constants.ITunesAPIs.artistTermQueryKey, value: search.replacingOccurrences(of: " ", with: "+"))
         urlComponents?.queryItems = [entityQuery, attributeQuery, termQuery]
         
         guard let finalURL = urlComponents?.url else { completion(.failure(.invalidURL)) ; return }
-        print("fetchArtist Final URL: \(finalURL)")
+        print("fetch Artist Final URL: \(finalURL)")
         
-        URLSession.shared.dataTask(with: finalURL) { data, response, error in
+        URLSession.shared.dataTask(with: finalURL) { artistData, response, error in
             if let error = error {
                 completion(.failure(.thrownError(error)))
                 return
             }
             
             if let response = response as? HTTPURLResponse {
-                print("fetchArtist Response Status Code: \(response.statusCode)")
+                print("fetch Artist Response Status Code: \(response.statusCode)")
             }
             
-            guard let data = data else { completion(.failure(.noData)) ; return }
+            guard let data = artistData else { completion(.failure(.noData)) ; return }
             do {
                 let topLevel = try JSONDecoder().decode(ArtistTopLevelDictionary.self, from: data)
                 completion(.success(topLevel))
@@ -43,12 +43,89 @@ struct NetworkService {
     }
     
     
-    static func fetchAllAlbums() {
+    static func fetchAllAlbums(forArtist artist: Artist, completion: @escaping (Result<[Album], NetworkError>) -> Void) {
+        guard let baseURL   = URL(string: Constants.ITunesAPIs.allAlbumsBaseURL) else { completion(.failure(.invalidURL)) ; return }
+        var urlComponents   = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
+        let entityQuery     = URLQueryItem(name: Constants.ITunesAPIs.allAlbumsEntityQueryKey, value: Constants.ITunesAPIs.allAlbumsEntityQueryValue)
+        let artistIdQuery   = URLQueryItem(name: Constants.ITunesAPIs.allAlbumsArtistIdQueryKey, value: "\(artist.artistName.replacingOccurrences(of: " ", with: "+"))")
+        urlComponents?.queryItems = [entityQuery, artistIdQuery]
+        
+        guard let finalURL = urlComponents?.url else { completion(.failure(.invalidURL)) ; return }
+        print("Fetch AllAlbums Final URL: \(finalURL)")
+        
+        URLSession.shared.dataTask(with: finalURL) { albumData, response, error in
+            if let error = error {
+                completion(.failure(.thrownError(error)))
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                print("Fetch AllAlbums Response Status Code: \(response.statusCode)")
+            }
+            
+            guard let data = albumData else { completion(.failure(.noData)) ; return }
+            do {
+                let topLevel = try JSONDecoder().decode(AlbumTopLevelDictionary.self, from: data)
+                completion(.success(topLevel.searchAlbumResults))
+            } catch {
+                completion(.failure(.unableToDecode))
+                print("...from fetchAllAlbums data.")
+            }
+        }.resume()
     }
     
     
-    static func fetchSongsForAlbum() {
+    static func fetchAlbumArtwork(forAlbum album: Album, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
+        guard let finalURL = URL(string: album.albumArtworkURL) else { completion(.failure(.invalidURL)) ; return }
+        print("Fetch AlbumArtwork Final URL: \(finalURL)")
         
+        URLSession.shared.dataTask(with: finalURL) { albumArtData, response, error in
+            if let error = error {
+                completion(.failure(.thrownError(error)))
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                print("Fetch AlbumArtwork Response Status Code: \(response.statusCode)")
+            }
+            
+            guard let data       = albumArtData else { completion(.failure(.noData)) ; return }
+            guard let albumImage = UIImage(data: data) else { completion(.failure(.unableToDecode)) ; return }
+            completion(.success(albumImage))
+        }.resume()
+    }
+    
+    
+    static func fetchSongs(fromAlbum album: Album, completion: @escaping (Result<[Song], NetworkError>) -> Void) {
+        guard let baseURL   = URL(string: Constants.ITunesAPIs.songsOnAlbumBaseURL) else { completion(.failure(.invalidURL)) ; return }
+        var urlComponents   = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        
+        let entityQuery     = URLQueryItem(name: Constants.ITunesAPIs.songsOnAlbumEntityQueryKey, value: Constants.ITunesAPIs.songsOnAlbumEntityQueryValue)
+        let albumIdQuery    = URLQueryItem(name: Constants.ITunesAPIs.songsOnAlbumQueryKey, value: "\(album.albumID)")
+        urlComponents?.queryItems = [entityQuery, albumIdQuery]
+        
+        guard let finalURL = urlComponents?.url else { completion(.failure(.invalidURL)) ; return }
+        print("Fetch Songs Final URL: \(finalURL)")
+        
+        URLSession.shared.dataTask(with: finalURL) { songData, response, error in
+            if let error = error {
+                completion(.failure(.thrownError(error)))
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                print("Fetch Songs Response Status Code: \(response.statusCode)")
+            }
+            
+            guard let data = songData else { completion(.failure(.noData)) ; return }
+            do {
+                let topLevel = try JSONDecoder().decode(SongTopLevelDictionary.self, from: data)
+                completion(.success(topLevel.searchSongResults))
+            } catch {
+                completion(.failure(.unableToDecode))
+                print("...from fetchAllAlbums data.")
+            }
+        }.resume()
     }
 }

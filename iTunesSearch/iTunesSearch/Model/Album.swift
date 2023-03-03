@@ -17,16 +17,19 @@ struct AlbumTopLevelDictionary: Decodable {
 
 struct Album: Decodable {
     private enum CodingKeys: String, CodingKey {
+        case wrapperType
         case albumArtistName  = "artistName"
         case albumName        = "collectionName"
         case albumID          = "collectionId"
-        case albumArtwork     = "artworkUrl100"
+        case albumArtworkURL  = "artworkUrl100"
         case albumReleaseYear = "releaseDate"
     }
     
+    let wrapperType: String
     let albumArtistName: String
     let albumName: String
     let albumID: Int
-    let albumArtwork: String
+    let albumArtworkURL: String
     let albumReleaseYear: String
 }
+

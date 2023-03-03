@@ -16,7 +16,10 @@ class ArtistsTableViewCell: UITableViewCell {
     
     //MARK: - FUNCTIONS
     func updateUI(withArtist artist: Artist) {
-        artistNameLabel.text    = artist.artistName
+        artistNameLabel.text    = artist.artistName.replacingOccurrences(of: "+", with: " ")
         artistGenreLabel.text   = artist.primaryGenreName
     }
 }
+
+// https://itunes.apple.com/search?entity=musicArtist&attribute=artistTerm&term=Ray+L
+// https://itunes.apple.com/search?entity=musicArtist&attribute=artistTerm&term=Ray+L

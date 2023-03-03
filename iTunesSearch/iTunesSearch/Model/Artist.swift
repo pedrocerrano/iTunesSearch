@@ -16,6 +16,12 @@ struct ArtistTopLevelDictionary: Decodable {
 }
 
 struct Artist: Decodable {
+    private enum CodingKeys: String, CodingKey {
+        case artistName
+        case artistID   = "artistId"
+        case primaryGenreName
+    }
+    
     let artistName: String
     let artistID: Int
     let primaryGenreName: String

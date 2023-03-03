@@ -18,11 +18,13 @@ struct SongTopLevelDictionary: Decodable {
 struct Song: Decodable {
     private enum CodingKeys: String, CodingKey {
         case trackName
-        case trackNumber
-        case trackLength = "trackTimeMillis"
+//        case trackNumber
+//        case trackLength = "trackTimeMillis"
+        
     }
     
     let trackName: String
-    let trackNumber: Int
-    let trackLength: Int
+//    let trackNumber: Int
+//    let trackLength: Int
+    
 }
