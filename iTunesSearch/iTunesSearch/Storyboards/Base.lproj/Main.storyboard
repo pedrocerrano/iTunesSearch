@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="209" width="393" height="609"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="artistCell" id="NxW-xp-2FG" customClass="AlbumTableViewCell" customModule="iTunesSearch" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="artistCell" id="NxW-xp-2FG" customClass="ArtistsTableViewCell" customModule="iTunesSearch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="52.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NxW-xp-2FG" id="QjV-X0-LMh">
@@ -70,6 +70,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="artistGenreLabel" destination="cUY-9j-lrP" id="xYx-9e-F3o"/>
+                                            <outlet property="artistNameLabel" destination="1Xx-bS-ZgQ" id="XZj-Oa-PLF"/>
                                             <segue destination="k8S-Bk-RaM" kind="show" identifier="toSelectedArtistAlbumsVC" id="ovD-xA-XI0"/>
                                         </connections>
                                     </tableViewCell>
@@ -119,7 +121,7 @@
                                 <rect key="frame" x="0.0" y="145" width="393" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="albumCell" id="9zg-ub-wzb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="albumCell" id="9zg-ub-wzb" customClass="AlbumTableViewCell" customModule="iTunesSearch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="104.33333587646484"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9zg-ub-wzb" id="pVJ-Un-pQ2">
