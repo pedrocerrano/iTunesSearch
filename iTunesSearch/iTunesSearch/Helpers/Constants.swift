@@ -10,31 +10,34 @@ import Foundation
 struct Constants {
     
     struct ITunesAPIs {
-        // https://itunes.apple.com/search?entity=musicArtist&attribute=artistTerm&term=u2
+        // https://itunes.apple.com/search?entity=musicArtist&term=jack+johnson
         static let artistSearchbaseURL          = "https://itunes.apple.com/search"
 
         static let artistEntityQueryKey         = "entity"
         static let artistEntityQueryValue       = "musicArtist"
-        static let artistAttributeQueryKey      = "attribute"
-        static let artistAttributeQueryValue    = "artistTerm"
         static let artistTermQueryKey           = "term"
         
-        // https://itunes.apple.com/search?term=jack+johnson&entity=album
+        // https://itunes.apple.com/search?entity=album&attribute=artistTerm&term=jack+johnson
         static let allAlbumsBaseURL             = "https://itunes.apple.com/search"
 
         static let allAlbumsEntityQueryKey      = "entity"
         static let allAlbumsEntityQueryValue    = "album"
-        static let allAlbumsArtistIdQueryKey    = "term"
+        static let allAlbumsAttributeQueryKey   = "attribute"
+        static let allAlbumsAttributeQueryValue = "artistTerm"
+        static let allAlbumsArtistNameQueryKey  = "term"
         
-        // https://itunes.apple.com/lookup?entity=song&id=1443155637
-        static let songsOnAlbumBaseURL          = "https://itunes.apple.com/lookup"
+        // https://itunes.apple.com/search?entity=song&attribute=albumTerm&term=On+And+On
+        static let songsOnAlbumBaseURL              = "https://itunes.apple.com/search"
 
-        static let songsOnAlbumEntityQueryKey   = "entity"
-        static let songsOnAlbumEntityQueryValue = "song"
-        static let songsOnAlbumQueryKey         = "id"
+        static let songsOnAlbumEntityQueryKey       = "entity"
+        static let songsOnAlbumEntityQueryValue     = "song"
+        static let songsOnAlbumAttributeQueryKey    = "attribute"
+        static let songsOnAlbumAttributeQueryValue  = "albumTerm"
+        static let songsOnAlbumAlbumNameQueryKey    = "term"
     }
     
     struct Error {
         static let unknownError = "Unknown error. The issue is being worked on."
     }
 }
+

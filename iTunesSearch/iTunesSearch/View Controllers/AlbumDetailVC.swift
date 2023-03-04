@@ -42,12 +42,30 @@ class AlbumDetailVC: UIViewController {
                 DispatchQueue.main.async {
                     self?.albumArtImageView.image = albumArt
                 }
+                
+            case .failure(let error):
+                print(error.errorDescription ?? Constants.Error.unknownError)
+            }
+        }
+        fetchSongs(fromAlbum: album)
+    }
+    
+    
+    func fetchSongs(fromAlbum album: Album) {
+        NetworkService.fetchSongs(fromAlbum: album) { [weak self] result in
+            switch result {
+            case .success(let songs):
+                self?.songs = songs.filter({ song in
+                    album.albumName == song.songFromAlbumName
+                })
+                DispatchQueue.main.async {
+                    self?.songListTableView.reloadData()
+                }
             case .failure(let error):
                 print(error.errorDescription ?? Constants.Error.unknownError)
             }
         }
     }
-
 } //: CLASS
 
 
@@ -63,8 +81,12 @@ extension AlbumDetailVC: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "songCell", for: indexPath) as? SongListTableViewCell else { return UITableViewCell() }
         cell.selectionStyle = .none
         
-        let song = songs[indexPath.row]
+        let sortedSongs = songs.sorted {
+            $0.songNumber < $1.songNumber
+        }
         
+        let song = sortedSongs[indexPath.row]
+        cell.updateUI(withSong: song)
         
         return cell
     }

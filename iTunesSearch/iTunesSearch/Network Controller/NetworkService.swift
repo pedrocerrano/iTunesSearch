@@ -14,9 +14,8 @@ struct NetworkService {
         var urlComponents   = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
         let entityQuery     = URLQueryItem(name: Constants.ITunesAPIs.artistEntityQueryKey, value: Constants.ITunesAPIs.artistEntityQueryValue)
-        let attributeQuery  = URLQueryItem(name: Constants.ITunesAPIs.artistAttributeQueryKey, value: Constants.ITunesAPIs.artistAttributeQueryValue)
         let termQuery       = URLQueryItem(name: Constants.ITunesAPIs.artistTermQueryKey, value: search.replacingOccurrences(of: " ", with: "+"))
-        urlComponents?.queryItems = [entityQuery, attributeQuery, termQuery]
+        urlComponents?.queryItems = [entityQuery, termQuery]
         
         guard let finalURL = urlComponents?.url else { completion(.failure(.invalidURL)) ; return }
         print("fetch Artist Final URL: \(finalURL)")
@@ -48,8 +47,9 @@ struct NetworkService {
         var urlComponents   = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
         let entityQuery     = URLQueryItem(name: Constants.ITunesAPIs.allAlbumsEntityQueryKey, value: Constants.ITunesAPIs.allAlbumsEntityQueryValue)
-        let artistIdQuery   = URLQueryItem(name: Constants.ITunesAPIs.allAlbumsArtistIdQueryKey, value: "\(artist.artistName.replacingOccurrences(of: " ", with: "+"))")
-        urlComponents?.queryItems = [entityQuery, artistIdQuery]
+        let attributeQuery  = URLQueryItem(name: Constants.ITunesAPIs.allAlbumsAttributeQueryKey, value: Constants.ITunesAPIs.allAlbumsAttributeQueryValue)
+        let artistIdQuery   = URLQueryItem(name: Constants.ITunesAPIs.allAlbumsArtistNameQueryKey, value: "\(artist.artistName.replacingOccurrences(of: " ", with: "+"))")
+        urlComponents?.queryItems = [entityQuery, attributeQuery, artistIdQuery]
         
         guard let finalURL = urlComponents?.url else { completion(.failure(.invalidURL)) ; return }
         print("Fetch AllAlbums Final URL: \(finalURL)")
@@ -102,8 +102,9 @@ struct NetworkService {
         var urlComponents   = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
         let entityQuery     = URLQueryItem(name: Constants.ITunesAPIs.songsOnAlbumEntityQueryKey, value: Constants.ITunesAPIs.songsOnAlbumEntityQueryValue)
-        let albumIdQuery    = URLQueryItem(name: Constants.ITunesAPIs.songsOnAlbumQueryKey, value: "\(album.albumID)")
-        urlComponents?.queryItems = [entityQuery, albumIdQuery]
+        let attributeQuery  = URLQueryItem(name: Constants.ITunesAPIs.songsOnAlbumAttributeQueryKey, value: Constants.ITunesAPIs.songsOnAlbumAttributeQueryValue)
+        let albumNameQuery  = URLQueryItem(name: Constants.ITunesAPIs.songsOnAlbumAlbumNameQueryKey, value: album.albumName.replacingOccurrences(of: " ", with: "+"))
+        urlComponents?.queryItems = [entityQuery, attributeQuery, albumNameQuery]
         
         guard let finalURL = urlComponents?.url else { completion(.failure(.invalidURL)) ; return }
         print("Fetch Songs Final URL: \(finalURL)")
@@ -124,7 +125,7 @@ struct NetworkService {
                 completion(.success(topLevel.searchSongResults))
             } catch {
                 completion(.failure(.unableToDecode))
-                print("...from fetchAllAlbums data.")
+                print("...from fetch Songs data.")
             }
         }.resume()
     }

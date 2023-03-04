@@ -66,7 +66,9 @@ extension ArtistSearchVC: UISearchBarDelegate {
             case .success(let topLevel):
                 self?.artists.removeAll()
                 self?.artistTopLevel = topLevel
-                self?.artists = topLevel.searchArtistResults
+                self?.artists = topLevel.searchArtistResults.filter({ artist in
+                    artist.artistType == "Artist"
+                })
                 DispatchQueue.main.async {
                     self?.artistListTableView.reloadData()
                 }
