@@ -20,12 +20,27 @@ class ArtistSearchVC: UIViewController {
         artistListTableView.dataSource   = self
         artistListTableView.delegate     = self
         artistSeatchBar.delegate    = self
+        configureNavBarUI()
     }
     
     
     //MARK: - PROPERTIES
     var artistTopLevel: ArtistTopLevelDictionary?
     var artists: [Artist] = []
+    
+    
+    //MARK: - FUNCTIONS
+    func configureNavBarUI() {
+        let label = UILabel()
+        label.text = "Scottify"
+        let labelButtonTrick = UIBarButtonItem(customView: label)
+        navigationItem.leftBarButtonItem = labelButtonTrick
+        
+        let logo = UIImageView()
+        logo.image = UIImage(named: "scottifyLogoClearSmall")
+        let logoButtonTrick = UIBarButtonItem(customView: logo)
+        navigationItem.rightBarButtonItem = logoButtonTrick
+    }
     
 
     // MARK: - Navigation
