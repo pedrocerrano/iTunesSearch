@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Find Artist-->
+        <!--Artist SearchVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ArtistSearchVC" customModule="iTunesSearch" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,7 +84,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q8U-xV-6bd" secondAttribute="trailing" id="wTu-W4-4AI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Find Artist" id="VcO-Fu-7Ms"/>
+                    <navigationItem key="navigationItem" id="VcO-Fu-7Ms"/>
                     <connections>
                         <outlet property="artistListTableView" destination="q8U-xV-6bd" id="9hS-9f-2z0"/>
                         <outlet property="artistSeatchBar" destination="oZ4-Uo-tMd" id="rz7-Wh-BNL"/>

@@ -23,6 +23,7 @@ struct Album: Decodable {
         case albumID          = "collectionId"
         case albumArtworkURL  = "artworkUrl100"
         case albumReleaseYear = "releaseDate"
+        case albumGenre       = "primaryGenreName"
     }
     
     let wrapperType: String
@@ -31,5 +32,6 @@ struct Album: Decodable {
     let albumID: Int
     let albumArtworkURL: String
     let albumReleaseYear: String
+    let albumGenre: String
 }
 

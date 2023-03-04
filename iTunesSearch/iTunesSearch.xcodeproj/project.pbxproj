@@ -36,7 +36,7 @@
 		294AB6B329B1916600541362 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		294AB6B529B1953C00541362 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		294AB6B729B19AD500541362 /* ArtistsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsTableViewCell.swift; sourceTree = "<group>"; };
-		29545A9729AE513900EAA877 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29545A9729AE513900EAA877 /* Scottify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scottify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29545A9A29AE513900EAA877 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29545A9C29AE513900EAA877 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		29545A9E29AE513900EAA877 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 		29545A9829AE513900EAA877 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				29545A9729AE513900EAA877 /* iTunesSearch.app */,
+				29545A9729AE513900EAA877 /* Scottify.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,9 +165,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		29545A9629AE513900EAA877 /* iTunesSearch */ = {
+		29545A9629AE513900EAA877 /* Scottify */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29545AAB29AE513B00EAA877 /* Build configuration list for PBXNativeTarget "iTunesSearch" */;
+			buildConfigurationList = 29545AAB29AE513B00EAA877 /* Build configuration list for PBXNativeTarget "Scottify" */;
 			buildPhases = (
 				29545A9329AE513900EAA877 /* Sources */,
 				29545A9429AE513900EAA877 /* Frameworks */,
@@ -177,9 +177,9 @@
 			);
 			dependencies = (
 			);
-			name = iTunesSearch;
+			name = Scottify;
 			productName = iTunesSearch;
-			productReference = 29545A9729AE513900EAA877 /* iTunesSearch.app */;
+			productReference = 29545A9729AE513900EAA877 /* Scottify.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -210,7 +210,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				29545A9629AE513900EAA877 /* iTunesSearch */,
+				29545A9629AE513900EAA877 /* Scottify */,
 			);
 		};
 /* End PBXProject section */
@@ -398,6 +398,7 @@
 				DEVELOPMENT_TEAM = W6HRJ6R6XG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iTunesSearch/Supporting Files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Scottify;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -427,6 +428,7 @@
 				DEVELOPMENT_TEAM = W6HRJ6R6XG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iTunesSearch/Supporting Files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Scottify;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -457,7 +459,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29545AAB29AE513B00EAA877 /* Build configuration list for PBXNativeTarget "iTunesSearch" */ = {
+		29545AAB29AE513B00EAA877 /* Build configuration list for PBXNativeTarget "Scottify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				29545AAC29AE513B00EAA877 /* Debug */,

@@ -34,7 +34,9 @@ class SelectedArtistAlbumsVC: UIViewController {
         NetworkService.fetchAllAlbums(forArtist: artist) { [weak self] result in
             switch result {
             case .success(let albums):
-                self?.albums = albums                
+                self?.albums = albums.filter({ album in
+                    artist.primaryGenreName == album.albumGenre
+                })
                 DispatchQueue.main.async {
                     self?.artistNameLabel.text = artist.artistName
                     self?.albumListTableView.reloadData()
